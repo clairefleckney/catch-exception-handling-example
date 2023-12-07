@@ -29,9 +29,10 @@ int main() {
 			cin.clear();
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
-		catch (OutOfRange e) { // OutOfRange returns the value it was passed, saying not permitted
+		catch (OutOfRange e) {
+			// OutOfRange returns the value it was passed, saying not permitted
 			if (e.isSpecified()) cout << e.getValue() << " is not permitted." << endl;
-
+			// OutOfRange returns a generalized error message if no value gets passed to it
 			if (!e.isSpecified()) cout << "Please only enter values between -100 and 100." << endl;
 		}
 		catch (DivideByZero e) {
